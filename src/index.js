@@ -1,18 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+import { render } from 'react-dom';
+import { Router, hashHistory } from 'react-router';
+import { Provider } from 'react-redux';
 import store from './store/store';
-import registerServiceWorker from './registerServiceWorker';
-import DevTools from './containers/DevTools';
-import * as actions from './actions/actions-countries'
+import routes from './routes';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <div>
-      <DevTools/>
-    </div>
-  </Provider>
-  , document.getElementById('root'));
-
-store.dispatch(actions.getCountries());
-registerServiceWorker();
+render(
+    <Provider store={store}>
+        <Router history={hashHistory} routes={routes}/>
+    </Provider>,
+    document.getElementById('root')
+);
