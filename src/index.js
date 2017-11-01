@@ -5,6 +5,10 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 import routes from './routes';
 import DevTools from './containers/DevTools';
+<<<<<<< HEAD
+=======
+import './country.css';
+>>>>>>> 20_5
 
 render(
     <Provider store={store}>
